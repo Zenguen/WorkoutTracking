@@ -6,7 +6,6 @@ APP_ID = os.getenv('APP_ID')
 API_KEY = os.getenv('API_KEY')
 TOKEN_SHEETY = os.getenv('TOKEN_SHEETY')
 nutritionix_endpoint = "https://trackapi.nutritionix.com/v2/natural/exercise"
-sheety_get_endpoint = "https://api.sheety.co/5d9e47121f37ae92e90f2f341f1d3f5d/myWorkouts/workouts"
 sheety_post_endpoint= "https://api.sheety.co/5d9e47121f37ae92e90f2f341f1d3f5d/myWorkouts/workouts"
 today = dt.now()
 exercise_input = input("Tell me which exercise you did: ")
@@ -38,4 +37,3 @@ for exercise in exercises_data:
     }}
 
     response_sheet = requests.post(url=sheety_post_endpoint, json=json, headers=sheet_headers)
-    print(response_sheet.text)
